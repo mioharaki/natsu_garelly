@@ -1,0 +1,408 @@
+body {
+    background-color: rgb(246, 225, 202, 0.5);
+}
+
+/* main */
+main {
+    padding: 50px;
+}
+
+main h1 {
+    font-weight: 400;
+    text-align: center;
+}
+
+/* nav */
+nav {
+    /* display: block; */
+    width: 220px;
+    position: fixed;
+    background-color: #FFFFFF;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    transition: all 0.5s;
+    z-index: 31;
+    opacity: 0;
+}
+
+.open nav {
+    left: 0;
+    opacity: 1;
+}
+
+nav .inner {
+    padding: 25px;
+}
+nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .inner ul li {
+    margin: 0;
+    border-bottom: 1px solid #000;
+}
+
+nav .inner ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 1rem;
+    transition: all 0.5s;
+}
+
+
+nav .inner ul li a:hover{
+    background-color: rgb(245, 216, 235, 0.5);
+}
+
+.mainTitle {
+    position: fixed;
+    top: 15px;
+    left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Playfair Display', serif;
+    z-index: 30;
+}
+
+/* toggle-btnの位置決め */
+.toggle-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    z-index: 31;
+    cursor: pointer;
+   
+}
+
+.toggle-btn span {
+    position: absolute;
+    display: block;
+    /* left: 0; */
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+.toggle-btn span:nth-child(1){
+    top: 4px;
+}
+.toggle-btn span:nth-child(2){
+    top: 14px;
+}
+.toggle-btn span:nth-child(3){
+    top: 24px;
+}
+
+.open .toggle-btn span {
+    background-color: #FFF;
+}
+
+.open .toggle-btn span:nth-child(1){
+    transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle-btn span:nth-child(2){
+    display: none;
+}
+.open .toggle-btn span:nth-child(3){
+    transform: translateY(-10px) rotate(315deg);
+}
+
+
+#mask {
+    display: none;
+    transition: all 0.5s;
+}
+
+.open #mask {
+    display: block;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    opacity: 0.8;
+    cursor: pointer;
+    z-index: 30;
+    
+}
+
+
+.sectionTitle {
+    text-align: center;
+    padding: 70px 0;
+}
+
+.sectionTitle span {
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 1px solid black;   
+}
+
+/* about */
+
+.aboutSection {
+    width: 80%;
+    margin: 0 auto;
+    min-width: 900px;
+}
+
+.profile {
+    display: flex;
+    width: 100%;
+    
+}
+.profileImg {
+    width: 50%;
+    margin: 0 3%;
+}
+.column {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+}
+
+.row {
+    display: none;
+}
+
+.profileDetail{
+    width: 50%;
+    margin:0 3%;
+}
+
+.profileName {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 900px){
+    .aboutSection {
+        width: 95%;
+        margin: 0 auto; 
+        min-width: initial;
+    }
+    
+    .profile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .profileImg {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .column {
+      display: none;
+    }
+    
+    .row {
+        display: flex;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .profileDetail{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .profileName {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+/* garelly */
+.garelly {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .cards {
+    width: 100%;
+    display: flex;
+  }
+  
+  .card {
+    width: 33.3%;
+    margin: 3px;
+    transition: all 0.5s;/*状態変化の時間を指定*/
+    -webkit-transition: all 0.5s;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    
+  }
+  
+  .card:hover{
+    transform:scale(1.1); /*画像の拡大/縮小(xy)*/
+  }
+
+  @media screen and (max-width: 900px){
+    .card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        
+      }
+}
+
+@media screen and (max-width: 650px){
+    .garelly {
+        width: 95%;
+        margin: 0 auto;
+      }
+    
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        
+      }
+}
+@media screen and (max-width: 650px){
+
+    .garelly {
+        width: 95%;
+        margin: 0 auto;
+      }
+    
+    .card img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        
+      }
+}
+
+
+/* contact */
+
+.select{
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-width: 500px;
+}
+.input{
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-width: 500px;
+}
+.radio{
+    margin: 0 10px;
+}
+.textarea{
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    min-width: 500px;
+    min-height: 100pxs;
+}
+
+.button{
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+    background-color: #333;
+    text-align: center;
+    padding: 15px 60px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 #bbb;
+    transition: box-shadow .25s;
+
+}
+
+.button:hover{
+    box-shadow: 0 0 0 #bbb;
+}
+
+.button.button-submission{
+    background: #92d3ca;
+}
+
+.form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.form-table{
+    margin: 0 auto;
+}
+.form-table th {
+    padding: 10px;
+    text-align: left;
+
+}
+
+.form-table td {
+    padding: 10px;
+    
+}
+
+.form-button{
+    text-align: center;
+    margin: 20px;
+}
+
+@media screen and (max-width: 900px){
+    .form-table,
+    .form-table tbody,
+    .form-table tr,
+    .form-table th,
+    .form-table td{
+        font-display: block;
+    }
+    .select,
+    .input,
+    .textarea{
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+.footer {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(51, 51, 51, 0.8);
+    margin-top: 50px;
+    padding: 15px 0;
+}
+
+.footerSection {
+    display: flex;
+    justify-content: center;
+}
+
+.footerHeadline {
+    font-size: 20px;
+    color: #fff;
+    margin-right: 15px;
+    
+}
+
+.footerSection div img {
+    width: 30px;
+    height: 30px;
+}
